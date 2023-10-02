@@ -8,11 +8,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: navigate
-      run: cd SQLizer-back
-    - name: git
-      run: git pull
-    - name: docker kill
-      run: docker compose down
-    - name: docker run
-      run: docker compose up -d
+    - name: test
+      run: cd SQLizer-back && git pull && docker compose down && docker compose up -d
